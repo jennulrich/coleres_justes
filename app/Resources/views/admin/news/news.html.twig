@@ -4,12 +4,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="text-uppercase">Liste des news</h2>
+                <h3 class="text-uppercase">Liste des news</h3>
             </div>
             <div class="col-md-6 text-right">
-                <button class="btn btn-fill btn-info text-uppercase" style="margin: 30px 0 15px 0;">
+                <a href="{{ path('add_news') }}" class="btn btn-fill btn-info text-uppercase" style="margin: 20px 0 10px 0;">
                     <i class="fas fa-plus"></i> Ajouter une news
-                </button>
+                </a>
             </div>
         </div>
 
@@ -29,16 +29,15 @@
                 <td>{{ new.title }}</td>
                 <td>{{ new.content }}</td>
                 <td>{{ new.title }}</td>
-                <td>En ligne</td>
+                <td style="color: deepskyblue">En ligne</td>
                 <td class="text-center">
                     <a href="#" title="Editer"><i class="far fa-edit"></i></a>
-                    <a href="#" title="Supprimer"><i class="far fa-trash-alt"></i></a>
-                    <a href="#" title="Visualiser"><i class="fas fa-eye"></i></a>
+                    <a href="{{ path('delete_news', {"id":new.id}) }}" title="Supprimer"><i class="far fa-trash-alt"></i></a>
+                    <a href="{{ path('admin_news_view', {"id":new.id}) }}" title="Visualiser"><i class="fas fa-eye"></i></a>
                 </td>
             </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
-
 {% endblock %}

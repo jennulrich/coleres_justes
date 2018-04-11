@@ -13,6 +13,7 @@
     <!-- CSS Files -->
     <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('template/css/light-bootstrap-dashboard.css') }}" rel="stylesheet" />
+    <link href="{{ asset('template/css/style-admin.css') }}" rel="stylesheet" />
 </head>
 
 <body>
@@ -30,19 +31,22 @@
                 </a>
             </div>
             <ul class="nav">
-                <li class="nav-item active">
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'dashboard' %}active{% endif %}">
                     <a class="nav-link" href="#">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
+                <li {% if (app.request.attributes.get('_route') == 'admin_news')
+                        or (app.request.attributes.get('_route') == 'add_news') %}
+                        class="active"
+                    {% endif %}>
                     <a class="nav-link" href="{{ path('admin_news') }}">
                         <i class="nc-icon nc-paper-2"></i>
                         <p>News</p>
                     </a>
                 </li>
-                <li>
+                <li {% if app.request.attributes.get('_route') == 'vos_coleres' %}class="active"{% endif %}>
                     <a class="nav-link" href="#">
                         <i class="nc-icon nc-camera-20"></i>
                         <p>Vos colères</p>

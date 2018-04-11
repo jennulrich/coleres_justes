@@ -1,8 +1,40 @@
 body {
-    background-color: #F7F7F8;
+    /*background-color: #F7F7F8;*/
 }
 
-main {
+/*main {
     height: 100vh;
     display: flex;
+}*/
+
+div.card .form form {
+    width: 100%;
+    margin: auto;
+}
+
+div#news_inserted_at_time {
+    display: none;
+}
+
+div#news_inserted_at_date {
+    margin-bottom: 15px;
+}
+
+.add-title div label {
+    display: block;
+    font-size: 12pt;
+}
+
+.add-title div input, .add-title div textarea {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.add-title div textarea {
+    height: 150px;
+    border-color: lightgray;
+}
+
+.publication {
+    display: none;
 }
