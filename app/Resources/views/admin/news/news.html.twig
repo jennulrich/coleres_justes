@@ -1,0 +1,43 @@
+{% extends "admin/layout-admin.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-uppercase">Liste des news</h3>
+            </div>
+            <div class="col-md-6 text-right">
+                <a href="{{ path('add_news') }}" class="btn btn-fill btn-info text-uppercase" style="margin: 20px 0 10px 0;">
+                    <i class="fas fa-plus"></i> Ajouter une news
+                </a>
+            </div>
+        </div>
+
+        <table class="table-responsive table-bordered table" style="background-color: white">
+            <thead>
+            <tr>
+                <th>titre</th>
+                <th>descriptif de la news</th>
+                <th>date de publication</th>
+                <th>statut</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for new in news %}
+            <tr>
+                <td>{{ new.title }}</td>
+                <td>{{ new.content }}</td>
+                <td>{{ new.title }}</td>
+                <td style="color: deepskyblue">En ligne</td>
+                <td class="text-center">
+                    <a href="#" title="Editer"><i class="far fa-edit"></i></a>
+                    <a href="{{ path('delete_news', {"id":new.id}) }}" title="Supprimer"><i class="far fa-trash-alt"></i></a>
+                    <a href="{{ path('admin_news_view', {"id":new.id}) }}" title="Visualiser"><i class="fas fa-eye"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
