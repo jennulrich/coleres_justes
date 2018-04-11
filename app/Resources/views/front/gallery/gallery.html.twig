@@ -1,0 +1,62 @@
+{% extends "front/layout.html.twig" %}
+
+{% block content %}
+<div id="gallery">
+    <div class="gallery-container animated fadeIn" id="gallery-container">
+        <div class="tz-gallery">
+            <div class="row gallery-first-row">
+                <div class="col-md-4 img-container">
+                    <div>
+                        <a class="lightbox" href="{{ asset('template/img/blue-2702172_1280.jpg') }}">
+                            <img src="{{ asset('template/img/blue-2702172_1280.jpg') }}" alt="Park" class="card-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 img-container">
+                    <div>
+                        <a class="lightbox" href="{{ asset('template/img/blue-2705642_1280.jpg') }}">
+                            <img src="{{ asset('template/img/blue-2705642_1280.jpg') }}" alt="Park" class="card-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 img-container">
+                    <div>
+                        <a class="lightbox" href="{{ asset('template/img/christmas-2971961_1280.jpg') }}">
+                            <img src="{{ asset('template/img/christmas-2971961_1280.jpg') }}" alt="Park" class="card-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 img-container">
+                    <div>
+                        <a class="lightbox" href="{{ asset('template/img/laptop-2558666_1920.jpg') }}">
+                            <img src="{{ asset('template/img/laptop-2558666_1920.jpg') }}" alt="Park" class="card-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 img-container">
+                    <div>
+                        <a class="lightbox" href="{{ asset('template/img/laptop-2838921_1920.jpg') }}">
+                            <img src="{{ asset('template/img/laptop-2838921_1920.jpg') }}" alt="Park" class="card-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 img-container">
+                    <div>
+                        <a class="lightbox" href="{{ asset('template/img/pumpkin-soup-2972858_1280.jpg') }}">
+                            <img src="{{ asset('template/img/pumpkin-soup-2972858_1280.jpg') }}" alt="Park" class="card-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+{% endblock %}

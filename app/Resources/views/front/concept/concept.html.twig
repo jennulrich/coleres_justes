@@ -1,0 +1,48 @@
+{% extends "front/layout.html.twig" %}
+
+{% block content %}
+    <script>
+        $('.carousel').carousel();
+    </script>
+
+    <div class="text-center">
+        <div id="carouselExampleIndicators" class="carousel slide align" data-ride="carousel" data-interval="false">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner title" role="listbox" id="concept">
+                <div class="carousel-item active">
+                    <div class="text-center animated fadeIn title-concept">
+                        <h2 class="text-uppercase">concept</h2>
+                        <p class=" explication">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ac nulla sit amet ullamcorper. Aenean quis quam massa. Ut posuere volutpat semper. Proin ac gravida magna, sed fringilla turpis. Donec euismod, dui id tincidunt imperdiet, libero tellus iaculis magna, id pharetra orci enim vel nulla. Fusce dignissim venenatis felis id tristique. Quisque ultrices eu nisi eu blandit. Nulla velit mi, aliquam vel suscipit nec, laoreet vulputate risus.</p>
+                    </div>
+                </div>
+                <div class="carousel-item title" id="definition">
+                    <div class="text-center animated fadeIn title-concept">
+                        <h2 class="text-uppercase">définition</h2>
+                        <p class=" explication">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ac nulla sit amet ullamcorper. Aenean quis quam massa. Ut posuere volutpat semper. Proin ac gravida magna, sed fringilla turpis. Donec euismod, dui id tincidunt imperdiet, libero tellus iaculis magna, id pharetra orci enim vel nulla. Fusce dignissim venenatis felis id tristique. Quisque ultrices eu nisi eu blandit. Nulla velit mi, aliquam vel suscipit nec, laoreet vulputate risus.
+                            <br><br>
+                            Fusce dignissim venenatis felis id tristique. Quisque ultrices eu nisi eu blandit. Nulla velit mi, aliquam vel suscipit nec, laoreet vulputate risus.</p>
+                    </div>
+                </div>
+                <div class="carousel-item title" id="traitement">
+                    <div class="text-center animated fadeIn title-concept">
+                        <h2 class="text-uppercase">traitement</h2>
+                        <p class=" explication">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ac nulla sit amet ullamcorper. Aenean quis quam massa. Ut posuere volutpat semper. Proin ac gravida magna, sed fringilla turpis. Donec euismod, dui id tincidunt imperdiet, libero tellus iaculis magna, id pharetra orci enim vel nulla. Fusce dignissim venenatis felis id tristique. Quisque ultrices eu nisi eu blandit. Nulla velit mi, aliquam vel suscipit nec, laoreet vulputate risus.</p>
+                        <p class=" explication">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia ac nulla sit amet ullamcorper. Aenean quis quam massa. Ut posuere volutpat semper. Proin ac gravida magna, sed fringilla turpis. Donec euismod, dui id tincidunt imperdiet, libero tellus iaculis magna, id pharetra orci enim vel nulla. Fusce dignissim venenatis felis id tristique. Quisque ultrices eu nisi eu blandit. Nulla velit mi, aliquam vel suscipit nec, laoreet vulputate risus.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "front/layout.html.twig" %}
+
+{% block content %}
+    <div class="title">
+        <div>
+            {% for new in news %}
+                <a href="{{ path('news_view', {"id":new.id}) }}">{{ new.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

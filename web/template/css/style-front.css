@@ -1,0 +1,125 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    background-color: #141414;
+}
+
+.align {
+    display: flex;
+}
+
+.title {
+    color: #fff;
+    margin: auto;
+}
+
+.title h1 {
+    font-size: 50pt;
+}
+
+header nav.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: lighter;
+    padding-bottom: 5px;
+    margin: 0 20px;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid white;
+}
+
+header {
+    height: 10vh;
+}
+
+div.title-concept {
+    width: 70%;
+    margin: 0 auto;
+}
+
+footer {
+    height: 5vh;
+}
+
+a.title-to-concept {
+    color: white;
+}
+
+a.title-to-concept:hover {
+    text-decoration: none;
+    color: white;
+}
+
+main, .align {
+    height: 85vh;
+}
+
+.explication {
+    font-size: 10pt;
+}
+
+.img-container {
+    overflow: hidden;
+    height: 170px;
+}
+
+div div a.lightbox img.card-img {
+    border-radius: 0;
+    width: 100%;
+}
+
+main {
+    display: flex;
+}
+
+#gallery {
+    margin: auto;
+}
+
+div.gallery-first-row {
+    padding-bottom: 30px;
+}
+
+button#previous-button, button#next-button, button#close-button {
+    outline: none;
+}
+
+input, textarea {
+    background-color: #141414;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+input::placeholder, textarea {
+    color: white;
+    font-size: 10pt;
+}
+
+button {
+    font-size: 10pt;
+}
+
+.active-menu {
+    border-bottom: 2px solid white;
+}
+
+img.user {
+    width: 70%;
+}

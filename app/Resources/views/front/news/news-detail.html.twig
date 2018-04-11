@@ -1,0 +1,14 @@
+{% extends "front/layout.html.twig" %}
+
+{% block content %}
+    <div class="title">
+        <div>
+            <p>{{ new.title }}</p>
+            <p>{{ new.content }}</p>
+            <p>{{ new.publishedAt|date("d/m/Y") }}</p>
+            <p>{{ new.insertedAt|date("d/m/Y") }}</p>
+
+            <a href="{{ path('news') }}">Retour à la liste des news</a>
+        </div>
+    </div>
+{% endblock %}
