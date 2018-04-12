@@ -32,7 +32,7 @@
             </div>
             <ul class="nav">
                 <li class="nav-item {% if app.request.attributes.get('_route') == 'dashboard' %}active{% endif %}">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ path('dashboard') }}">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
                     </a>
@@ -71,7 +71,11 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                <a class="navbar-brand" href="#pablo">
+                    {%- if app.request.attributes.get('_route') == 'dashboard' -%}Dashboard{%- endif -%}
+                    {%- if (app.request.attributes.get('_route') == 'admin_news')
+                        or (app.request.attributes.get('_route') == 'add_news') -%}News{%- endif -%}
+                </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
                     <span class="navbar-toggler-bar burger-lines"></span>
@@ -115,7 +119,11 @@
         </nav>
         <!-- End Navbar -->
 
-        {% block content '' %}
+        <div class="content">
+            <div class="container-fluid">
+                {% block content '' %}
+            </div>
+        </div>
 
         <footer class="footer">
             <div class="container">

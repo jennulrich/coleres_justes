@@ -3,23 +3,32 @@
 namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\News;
+use AppBundle\Manager\NewsManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\NewsType;
+use Symfony\Component\HttpFoundation\Response;
 
 class NewsController extends Controller
 {
+    /** @var NewsManager */
+    private $newsManager;
+
+    public function __construct(NewsManager $newsManager)
+    {
+        $this->newsManager = $newsManager;
+    }
+
     /**
      * @Route("admin/news/{id}", name="admin_news_view", requirements={"id"="\d+"})
      * @param $id int
-     * @return $new
+     * @return Response
      */
-    public function viewAction($id)
+    public function viewAction(int $id): Response
     {
-        $em = $this->getDoctrine()->getManager();
-        $new = $em->getRepository(News::class)
-            ->find($id);
+        $new = $this->newsManager->get($id);
+
         return $this->render('admin/news/news-detail.html.twig', [
             "new" => $new
         ]);
@@ -27,12 +36,12 @@ class NewsController extends Controller
 
     /**
      * @Route("admin/news", name="admin_news")
+     * @return Response
      */
-    public function listAction()
+    public function listAction(): Response
     {
-        $em = $this->getDoctrine()->getManager();
-        $news = $em->getRepository(News::class)
-            ->findAll();
+        $news = $this->newsManager->getList();
+
         return $this->render('admin/news/news.html.twig', [
             "news" => $news
         ]);
@@ -40,8 +49,10 @@ class NewsController extends Controller
 
     /**
      * @Route("/admin/news/add", name="add_news")
+     * @return Response
+     * @param Request $request
      */
-    public function addAction(Request $request)
+    public function addAction(Request $request): Response
     {
         $news = new News();
 
@@ -49,10 +60,7 @@ class NewsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $task = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($task);
-            $em->flush();
+            $this->newsManager->save($news);
 
             return $this->redirectToRoute('admin_news');
         }
@@ -65,8 +73,9 @@ class NewsController extends Controller
 
     /**
      * @Route("/admin/news/{id}/delete", name="delete_news", requirements={"id"="\d+"})
+     * @return Response
      */
-    public function DeleteAction(News $news)
+    public function DeleteAction(News $news): Response
     {
         $em=$this->getDoctrine()->getManager();
         $em->remove($news);
