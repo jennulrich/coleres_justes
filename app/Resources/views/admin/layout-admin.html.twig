@@ -7,12 +7,15 @@
     <title>{% block title 'Dashboard - Les Colères Justes' %}</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
     <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('template/css/light-bootstrap-dashboard.css') }}" rel="stylesheet" />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/css/froala_style.min.css' rel='stylesheet' type='text/css' />
     <link href="{{ asset('template/css/style-admin.css') }}" rel="stylesheet" />
 </head>
 
@@ -52,8 +55,8 @@
                         <p>Vos colères</p>
                     </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="#">
+                <li {% if app.request.attributes.get('_route') == 'admin_about' %}class="active"{% endif %}>
+                    <a class="nav-link" href="{{ path('admin_about') }}">
                         <i class="nc-icon nc-circle-09"></i>
                         <p>à propos</p>
                     </a>
@@ -75,6 +78,9 @@
                     {%- if app.request.attributes.get('_route') == 'dashboard' -%}Dashboard{%- endif -%}
                     {%- if (app.request.attributes.get('_route') == 'admin_news')
                         or (app.request.attributes.get('_route') == 'add_news') -%}News{%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'admin_about' -%}About{%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'admin_edit_about' -%}About{%- endif -%}
+
                 </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
@@ -119,7 +125,7 @@
         </nav>
         <!-- End Navbar -->
 
-        <div class="content">
+        <div class="content" style="font-family: 'Open Sans', sans-serif">
             <div class="container-fluid">
                 {% block content '' %}
             </div>
@@ -150,6 +156,8 @@
 <script src="{{ asset('template/js/plugin/bootstrap-switch.js') }}"></script>
 <!--  Chartist Plugin  -->
 <script src="{{ asset('template/js/plugin/chartist.min.js') }}"></script>
+<!-- Textarea WYSIWYG -->
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/js/froala_editor.min.js'></script>
 <!--  Notifications Plugin    -->
 <script src="{{ asset('template/js/plugin/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
