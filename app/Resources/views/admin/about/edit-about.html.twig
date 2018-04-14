@@ -1,0 +1,27 @@
+{% extends "admin/layout-admin.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-uppercase" style="margin-top: 25px">à propos</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="padding: 15px">
+                <div class="form container-fluid">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    <div class="add-title">
+                        {{ form_row(form.content) }}
+                    </div>
+                    <button type="submit" class="btn btn-fill btn-info text-uppercase" id="edit-button">Enregistrer</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "admin/layout-admin.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-uppercase">à propos</h3>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-12">
+        {% for about in abouts %}
+        <div class="card" style="padding: 20px">
+            <div class="row" style="display: flex;">
+                <div class="col-md-4" style="margin: auto">
+                    <img src="{{ asset('template/img/user.png') }}" alt="" style="width: 100%;">
+                </div>
+                <div class="col-md-8">
+                    {{ about.content }}
+                </div>
+            </div>
+        </div>
+        <a href="{{ path('admin_edit_about', {"id":about.id}) }}" class="text-uppercase btn btn-fill btn-info">modifier</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

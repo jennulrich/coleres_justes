@@ -65,6 +65,14 @@ class User
 
 
     /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->isAdmin = false;
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -170,6 +178,28 @@ class User
         return $this->firstName;
     }
 
+    //function UserInterface
+    public function getRoles()
+    {
+        $roles = ['ROLE_USER'];
+
+        if($this->isAdmin()) {
+            $roles[] = 'ROLE_ADMIN';
+        }
+
+        return $roles;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return;
+    }
+
     /**
      * Set isAdmin
      *
@@ -182,6 +212,16 @@ class User
         $this->isAdmin = $isAdmin;
 
         return $this;
+    }
+
+    /**
+     * Get isAdmin.
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->isAdmin;
     }
 
     /**
