@@ -4,6 +4,7 @@ namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\About;
 use AppBundle\Form\AboutType;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,6 +32,7 @@ class AboutController extends Controller
         $em=$this->getDoctrine()->getManager();
         $about = $em->getRepository(About::class)
             ->find($id);
+        $about->setImage(null);
         $form = $this->createForm(AboutType::class, $about);
 
         $form->handleRequest($request);
@@ -48,5 +50,17 @@ class AboutController extends Controller
             'form' => $form->createView(),
             'about' => $about
         ]);
+    }
+
+    /**
+     * @Route("/admin/about/{id}/image", name="about_image", requirements={"id"="\d+"})
+     */
+    public function ImageViewAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $about = $em->getRepository(About::class)
+            ->find($id);
+        $file = $this->getParameter("images_directory")."/".$about->getImage();
+        return new BinaryFileResponse($file);
     }
 }

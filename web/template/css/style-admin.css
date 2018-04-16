@@ -47,6 +47,6 @@ div#news_inserted_at_date {
     margin-top: 15px;
 }
 
-textarea#about_content {
+div.content {
     font-family: 'Open Sans', sans-serif;
 }
