@@ -14,8 +14,6 @@
     <!-- CSS Files -->
     <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('template/css/light-bootstrap-dashboard.css') }}" rel="stylesheet" />
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/css/froala_style.min.css' rel='stylesheet' type='text/css' />
     <link href="{{ asset('template/css/style-admin.css') }}" rel="stylesheet" />
 </head>
 
@@ -29,15 +27,14 @@
 -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="#" class="simple-text text-uppercase">
-                    les colères justes
+                <a href="{{ path('homepage') }}" target="_blank" class="simple-text text-uppercase">
+                    <span><i class="fas fa-home"></i> les colères justes</span>
                 </a>
             </div>
             <ul class="nav">
                 <li class="nav-item {% if app.request.attributes.get('_route') == 'dashboard' %}active{% endif %}">
                     <a class="nav-link" href="{{ path('dashboard') }}">
-                        <i class="nc-icon nc-chart-pie-35"></i>
-                        <p>Dashboard</p>
+                        <span><i class="nc-icon nc-chart-pie-35"></i> Dashboard</span>
                     </a>
                 </li>
                 <li {% if (app.request.attributes.get('_route') == 'admin_news')
@@ -45,26 +42,22 @@
                         class="active"
                     {% endif %}>
                     <a class="nav-link" href="{{ path('admin_news') }}">
-                        <i class="nc-icon nc-paper-2"></i>
-                        <p>News</p>
+                        <span><i class="nc-icon nc-paper-2"></i> News</span>
                     </a>
                 </li>
                 <li {% if app.request.attributes.get('_route') == 'vos_coleres' %}class="active"{% endif %}>
                     <a class="nav-link" href="#">
-                        <i class="nc-icon nc-camera-20"></i>
-                        <p>Vos colères</p>
+                        <span><i class="nc-icon nc-camera-20"></i> Vos colères</span>
                     </a>
                 </li>
                 <li {% if app.request.attributes.get('_route') == 'admin_about' %}class="active"{% endif %}>
                     <a class="nav-link" href="{{ path('admin_about') }}">
-                        <i class="nc-icon nc-circle-09"></i>
-                        <p>à propos</p>
+                        <span><i class="nc-icon nc-circle-09"></i> à propos</span>
                     </a>
                 </li>
                 <li>
                     <a class="nav-link" href="#">
-                        <i class="nc-icon nc-email-85"></i>
-                        <p>messagerie</p>
+                        <span><i class="nc-icon nc-email-85"></i> messagerie</span>
                     </a>
                 </li>
             </ul>
@@ -116,7 +109,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#pablo">
                                 <i class="nc-icon nc-button-power" style="padding-right: 5px"></i>
-                                <span class="no-icon">Log out</span>
+                                <span class="no-icon">Déconnexion</span>
                             </a>
                         </li>
                     </ul>
@@ -157,7 +150,6 @@
 <!--  Chartist Plugin  -->
 <script src="{{ asset('template/js/plugin/chartist.min.js') }}"></script>
 <!-- Textarea WYSIWYG -->
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.0/js/froala_editor.min.js'></script>
 <!--  Notifications Plugin    -->
 <script src="{{ asset('template/js/plugin/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
