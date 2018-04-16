@@ -2,9 +2,13 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\About;
 use AppBundle\Entity\News;
+use AppBundle\Form\AboutType;
+use AppBundle\Form\NewsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class NewsController extends Controller
 {
