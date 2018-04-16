@@ -11,6 +11,19 @@ div.content {
     font-family: 'Open Sans', sans-serif;
 }
 
+.table {
+    background-color: white;
+}
+
+.status {
+    color: deepskyblue;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+    padding: 15px;
+}
+
 div.card .form form {
     width: 100%;
     margin: auto;
@@ -29,7 +42,7 @@ div#news_inserted_at_date {
     font-size: 12pt;
 }
 
-.add-title div input, .add-title div textarea {
+.add-title div input {
     width: 100%;
     margin-bottom: 15px;
 }
@@ -47,6 +60,27 @@ div#news_inserted_at_date {
     margin-top: 15px;
 }
 
-div.content {
+p {
+    font-size: 10pt;
+}
+
+.md-editor>.md-header {
+    background: #eee;
+}
+
+.btn-toolbar .btn-group .btn {
+    border: 1px solid #888888;
+    margin: 0 1px;
+    background: white;
+}
+
+.md-editor>textarea {
+    background: white;
+    border-bottom: none;
+    border-top: 1px solid #ddd;
+    padding: 15px;
+}
+
+.content a, h3, p {
     font-family: 'Open Sans', sans-serif;
 }

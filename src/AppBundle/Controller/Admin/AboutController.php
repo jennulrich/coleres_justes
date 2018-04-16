@@ -37,7 +37,6 @@ class AboutController extends Controller
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            $about = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($about);
             $em->flush();

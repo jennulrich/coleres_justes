@@ -12,8 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="{{ asset('template/css/light-bootstrap-dashboard.css') }}" rel="stylesheet" />
+    <link href="{{ asset('template/plugins/bootstrap-markdown/bootstrap-markdown.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('template/css/style-admin.css') }}" rel="stylesheet" />
 </head>
 
@@ -39,7 +40,7 @@
                 </li>
                 <li {% if (app.request.attributes.get('_route') == 'admin_news')
                         or (app.request.attributes.get('_route') == 'add_news')
-                        or (app.request.attributes.get('_route') == 'news_edit')%}
+                        or (app.request.attributes.get('_route') == 'news_edit') %}
                         class="active"
                     {% endif %}>
                     <a class="nav-link" href="{{ path('admin_news') }}">
@@ -51,7 +52,8 @@
                         <span><i class="nc-icon nc-camera-20"></i> Vos colères</span>
                     </a>
                 </li>
-                <li {% if app.request.attributes.get('_route') == 'admin_about' %}class="active"{% endif %}>
+                <li {% if app.request.attributes.get('_route') == 'admin_about'
+                        or (app.request.attributes.get('_route') == 'admin_edit_about') %}class="active"{% endif %}>
                     <a class="nav-link" href="{{ path('admin_about') }}">
                         <span><i class="nc-icon nc-circle-09"></i> à propos</span>
                     </a>
@@ -72,7 +74,8 @@
                     {%- if app.request.attributes.get('_route') == 'dashboard' -%}Dashboard{%- endif -%}
                     {%- if (app.request.attributes.get('_route') == 'admin_news')
                         or (app.request.attributes.get('_route') == 'add_news')
-                        or (app.request.attributes.get('_route') == 'news_edit') -%}News{%- endif -%}
+                        or (app.request.attributes.get('_route') == 'news_edit')
+                        or (app.request.attributes.get('_route') == 'admin_news_view') -%}News{%- endif -%}
                     {%- if app.request.attributes.get('_route') == 'admin_about' -%}About{%- endif -%}
                     {%- if app.request.attributes.get('_route') == 'admin_edit_about' -%}About{%- endif -%}
 
@@ -120,7 +123,7 @@
         </nav>
         <!-- End Navbar -->
 
-        <div class="content" style="font-family: 'Open Sans', sans-serif">
+        <div class="content">
             <div class="container-fluid">
                 {% block content '' %}
             </div>
@@ -146,15 +149,16 @@
 <!--   Core JS Files   -->
 <script src="{{ asset('template/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('template/js/popper.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('template/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="{{ asset('template/js/plugin/bootstrap-switch.js') }}"></script>
 <!--  Chartist Plugin  -->
 <script src="{{ asset('template/js/plugin/chartist.min.js') }}"></script>
-<!-- Textarea WYSIWYG -->
 <!--  Notifications Plugin    -->
 <script src="{{ asset('template/js/plugin/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="{{ asset('template/js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
+<!-- Textarea WYSIWYG -->
+<script src="{{ asset('template/plugins/bootstrap-markdown/bootstrap-markdown.js') }}"></script>
 {% block javascripts '' %}
 </html>
