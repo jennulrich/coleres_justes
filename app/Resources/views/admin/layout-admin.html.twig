@@ -38,7 +38,8 @@
                     </a>
                 </li>
                 <li {% if (app.request.attributes.get('_route') == 'admin_news')
-                        or (app.request.attributes.get('_route') == 'add_news') %}
+                        or (app.request.attributes.get('_route') == 'add_news')
+                        or (app.request.attributes.get('_route') == 'news_edit')%}
                         class="active"
                     {% endif %}>
                     <a class="nav-link" href="{{ path('admin_news') }}">
@@ -70,7 +71,8 @@
                 <a class="navbar-brand" href="#pablo">
                     {%- if app.request.attributes.get('_route') == 'dashboard' -%}Dashboard{%- endif -%}
                     {%- if (app.request.attributes.get('_route') == 'admin_news')
-                        or (app.request.attributes.get('_route') == 'add_news') -%}News{%- endif -%}
+                        or (app.request.attributes.get('_route') == 'add_news')
+                        or (app.request.attributes.get('_route') == 'news_edit') -%}News{%- endif -%}
                     {%- if app.request.attributes.get('_route') == 'admin_about' -%}About{%- endif -%}
                     {%- if app.request.attributes.get('_route') == 'admin_edit_about' -%}About{%- endif -%}
 

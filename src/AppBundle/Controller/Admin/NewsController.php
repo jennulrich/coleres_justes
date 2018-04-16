@@ -72,6 +72,34 @@ class NewsController extends Controller
     }
 
     /**
+     * @Route("/news/{id}/edit", name="news_edit", requirements={"id"="\d+"})
+     */
+    public function editAction(int $id, Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $new = $em->getRepository(News::class)
+            ->find($id);
+        //$news->setImage(null);
+        $form = $this->createForm(NewsType::class, $new);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $new = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($new);
+            $em->flush();
+            return $this->redirectToRoute('admin_news_view', [
+                "id"=>$new->getId(),
+            ]);
+        }
+
+        return $this->render('admin/news/edit-news.html.twig', [
+            'form' => $form->createView(),
+            'new' => $new
+        ]);
+    }
+
+    /**
      * @Route("/admin/news/{id}/delete", name="delete_news", requirements={"id"="\d+"})
      * @return Response
      */
