@@ -1,16 +1,16 @@
 {% extends "admin/layout-admin.html.twig" %}
 
 {% block content %}
-    <div class="col-md-6" style="margin-top: 20px">
+    <div class="col-md-6">
         <div class="card">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><h2>{{ new.title }}</h2></li>
-                <li class="list-group-item">{{ new.content }}</li>
+                <li class="list-group-item">{{ new.content|markdown }}</li>
                 <li class="list-group-item">{{ new.publishedAt|date("d/m/Y") }}</li>
                 <li class="list-group-item">{{ new.insertedAt|date("d/m/Y") }}</li>
             </ul>
         </div>
-        <a href="{{ path('admin_news') }}" class="btn btn-fill btn-info text-uppercase">
+        <a href="{{ path('admin_news') }}" class="btn btn-sm btn-fill btn-info text-uppercase">
             <i class="fas fa-chevron-left"></i> Retour
         </a>
     </div>

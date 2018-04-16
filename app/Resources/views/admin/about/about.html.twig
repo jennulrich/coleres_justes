@@ -15,11 +15,11 @@
                     <img src="{{ path("about_image", {"id":about.id}) }}" alt="" style="width: 100%;">
                 </div>
                 <div class="col-md-8">
-                    {{ about.content }}
+                    {{ about.content|markdown }}
                 </div>
             </div>
         </div>
-        <a href="{{ path('admin_edit_about', {"id":about.id}) }}" class="text-uppercase btn btn-fill btn-info">modifier</a>
+        <a href="{{ path('admin_edit_about', {"id":about.id}) }}" class="text-uppercase btn btn-sm btn-fill btn-info">modifier</a>
         {% endfor %}
     </div>
 </div>

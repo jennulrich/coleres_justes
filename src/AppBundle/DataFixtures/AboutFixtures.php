@@ -19,19 +19,8 @@ class AboutFixtures extends Fixture
     {
         $aboutContent = new About();
         $aboutContent
-            ->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse 
-                            lacinia ac nulla sit amet ullamcorper. Aenean quis quam massa. 
-                            Ut posuere volutpat semper. Proin ac gravida magna, sed fringilla turpis. D
-                            onec euismod, dui id tincidunt imperdiet, libero tellus iaculis magna, id 
-                            pharetra orci enim vel nulla. Fusce dignissim venenatis felis id tristique. 
-                            Quisque ultrices eu nisi eu blandit. Nulla velit mi, aliquam vel suscipit nec, 
-                            laoreet vulputate risus.
-
-                          Curabitur tristique ultrices vehicula. Donec id orci sagittis, scelerisque 
-                          tellus ac, congue orci. Morbi ac tortor risus. Nullam in nulla nec libero 
-                          gravida ultricies sed ac tellus. Quisque vestibulum non mauris vitae posuere. 
-                          Aenean ut ultricies nisi. Mauris sed dolor sagittis leo sollicitudin 
-                          lobortis.');
+            ->setImage(null)
+            ->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod massa quis lacus gravida interdum. Fusce luctus, neque non fringilla scelerisque, odio leo efficitur tortor, vel venenatis felis elit varius felis. Integer ut sodales ante, et vestibulum massa. Nunc ac mattis nibh, sed porta odio. Proin aliquam nulla nec justo cursus, ut consequat nisi luctus. Mauris ultricies sapien sagittis, euismod enim id, iaculis massa. Cras auctor lorem erat. Suspendisse et consequat ligula. Cras laoreet augue purus, at semper purus fringilla ut. Quisque scelerisque diam vitae ante interdum pellentesque. In quis justo mi.');
 
         $manager->persist($aboutContent);
         $manager->flush();

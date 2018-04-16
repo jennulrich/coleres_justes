@@ -14,10 +14,7 @@ class AboutType extends AbstractType
     {
         $builder
             ->add('content', TextareaType::class, [
-                'label' => 'Modifier la description',
-                'attr' => array(
-                    'class' => 'tinymce'
-                )
+                'label' => 'Modifier la description'
             ])
             ->add('image', FileType::class, array(
                 'label' => 'Image',
