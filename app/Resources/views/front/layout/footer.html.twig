@@ -1,4 +1,6 @@
+{% if app.request.attributes.get('_route') != 'homepage' %}
 <footer style="color: grey; font-size: 9pt">
     <span class="col-md-5" style="padding: 0 0 0 15px; float: left; line-height: 5vh">2018 © Cyril Delvart - Les Colères Justes</span>
     <span class="col-md-5 text-right" style="padding: 0 15px 0 0; float: right; line-height: 5vh">Made by Jennifer C.</span>
 </footer>
+{% endif %}
