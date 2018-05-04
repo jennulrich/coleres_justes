@@ -32,7 +32,9 @@
                 <td class="status">En ligne</td>
                 <td class="text-center">
                     <a href="{{ path('news_edit', {"id":new.id}) }}" title="Editer" class="icon-news"><i class="far fa-edit"></i></a>
-                    <a href="{{ path('delete_news', {"id":new.id}) }}" title="Supprimer" class="icon-news"><i class="far fa-trash-alt"></i></a>
+                    <a href="" title="Supprimer" class="icon-news" data-toggle="modal" data-target="#{{ new.id }}">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
                     <a href="{{ path('admin_news_view', {"id":new.id}) }}" title="Visualiser" class="icon-news"><i class="fas fa-eye"></i></a>
                 </td>
             </tr>
@@ -40,6 +42,21 @@
         </tbody>
     </table>
 
+    {% for new in news %}
+        <div class="modal fade" id="{{ new.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <span>Êtes-vous sûr de vouloir supprimer cette news ?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ path('delete_news', {"id":new.id}) }}" class="btn btn-fill btn-info text-uppercase btn-sm">Supprimer</a>
+                        <button type="button" class="btn btn-fill btn-danger btn-sm text-uppercase" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
     <div class="navigation">
         {{ knp_pagination_render(news) }}
     </div>
