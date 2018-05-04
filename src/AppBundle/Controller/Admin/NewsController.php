@@ -4,6 +4,8 @@ namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\News;
 use AppBundle\Manager\NewsManager;
+use AppBundle\Repository\NewsRepository;
+use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -38,12 +40,28 @@ class NewsController extends Controller
      * @Route("admin/news", name="admin_news")
      * @return Response
      */
-    public function listAction(): Response
+    public function listAction(Request $request): Response
     {
         $news = $this->newsManager->getList();
 
+        //$total = $this->newsManager->getTotal();
+
+        /** @var $paginator Paginator*/
+        $paginator = $this->get('knp_paginator');
+        $paginator->setDefaultPaginatorOptions(array(
+                'align' => 'center'
+            ));
+
+        $result = $paginator->paginate(
+            $news,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 10)
+        );
+
+
         return $this->render('admin/news/news.html.twig', [
-            "news" => $news
+            "news" => $result,
+            //"total" => $total
         ]);
     }
 

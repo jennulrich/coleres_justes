@@ -1,11 +1,11 @@
 <header>
     <nav class="nav navbar text-uppercase" id="nav">
-        <a href="{{ path('homepage') }}" class="">accueil</a>
-        <a href="{{ path('concept_page') }}">concept</a>
-        <a href="{{ path('gallery') }}">galerie</a>
-        <a href="#">vos colères</a>
-        <a href="{{ path('news') }}">news</a>
-        <a href="{{ path('about') }}">à propos</a>
-        <a href="{{ path('contact') }}">contact</a>
+        <a href="{{ path('homepage') }}" class="{% if app.request.attributes.get('_route') == 'homepage' %}active-menu{% endif %}">accueil</a>
+        <a href="{{ path('concept_page') }}" class="{% if app.request.attributes.get('_route') == 'concept_page' %}active-menu{% endif %}">concept</a>
+        <a href="{{ path('gallery') }}" class="{% if app.request.attributes.get('_route') == 'gallery' %}active-menu{% endif %}">galerie</a>
+        <a href="{{ path('coleres') }}" class="{% if app.request.attributes.get('_route') == 'coleres' %}active-menu{% endif %}">vos colères</a>
+        <a href="{{ path('news') }}" class="{% if app.request.attributes.get('_route') == 'news' %}active-menu{% endif %}">news</a>
+        <a href="{{ path('about') }}" class="{% if app.request.attributes.get('_route') == 'about' %}active-menu{% endif %}">à propos</a>
+        <a href="{{ path('contact') }}" class="{% if app.request.attributes.get('_route') == 'contact' %}active-menu{% endif %}">contact</a>
     </nav>
 </header>

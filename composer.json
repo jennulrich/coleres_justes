@@ -26,6 +26,7 @@
         "egeloen/ckeditor-bundle": "^6.0",
         "incenteev/composer-parameter-handler": "^2.0",
         "knplabs/knp-markdown-bundle": "^1.7",
+        "knplabs/knp-paginator-bundle": "^2.7",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
         "stfalcon/tinymce-bundle": "2.3",

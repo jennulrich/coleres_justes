@@ -35,6 +35,10 @@ class NewsManager
         return $news;
     }
 
+    public function getTotal() {
+        return $this->newsRepository->findTotal();
+    }
+
     public function save(News $news)
     {
         $this->entityManager->persist($news);
