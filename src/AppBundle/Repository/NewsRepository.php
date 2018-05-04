@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class NewsRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findTotal(): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT COUNT('*') FROM news n'
+        );
+
+        return $query->getScalarResult();
+    }
 }

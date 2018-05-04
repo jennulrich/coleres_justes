@@ -2,40 +2,39 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\News;
-use AppBundle\Form\NewsType;
+use AppBundle\Entity\Coleres;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class NewsController extends Controller
+class ColeresController extends Controller
 {
     /**
-     * @Route("/news/{id}", name="news_view", requirements={"id"="\d+"})
+     * @Route("/coleres/{id}", name="coleres_view", requirements={"id"="\d+"})
      * @param $id int
      * @return Response
      */
     public function viewAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $new = $em->getRepository(News::class)
+        $colere = $em->getRepository(Coleres::class)
             ->find($id);
-        return $this->render('front/news/news-detail.html.twig', [
-            "new" => $new
+        return $this->render('front/coleres/coleres-detail.html.twig', [
+            "colere" => $colere
         ]);
     }
 
     /**
-     * @Route("/news", name="news")
+     * @Route("/coleres", name="coleres")
      */
     public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $news = $em->getRepository(News::class)
+        $coleres = $em->getRepository(Coleres::class)
             ->findAll();
-        return $this->render('front/news/news.html.twig', [
-            "news" => $news
+        return $this->render('front/coleres/coleres.html.twig', [
+            "coleres" => $coleres
         ]);
     }
 }

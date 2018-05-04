@@ -16,7 +16,7 @@ div.content {
 }
 
 .status {
-    color: deepskyblue;
+    color: #4982C7;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -83,4 +83,21 @@ p {
 
 .content a, h3, p {
     font-family: 'Open Sans', sans-serif;
+}
+
+.page-item.active .page-link {
+    background-color: #4982C7;
+    border-color: #4982C7;
+}
+
+.btn-info.btn-fill, .btn-info.btn-fill:hover {
+    background-color: #4982C7;
+}
+
+.btn-info, .btn-info:hover {
+    border-color: #4982C7;
+}
+
+.icon-news, .icon-news:hover {
+    color: #4982C7;
 }

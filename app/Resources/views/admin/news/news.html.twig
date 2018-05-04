@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="col-md-6">
-            <h3 class="text-uppercase">Liste des news</h3>
+            <h3 class="text-uppercase">Liste des news <span style="font-size: 11pt">({{ news|length }} News)</span></h3>
         </div>
         <div class="col-md-6 text-right">
             <a href="{{ path('add_news') }}" class="btn btn-sm btn-fill btn-info text-uppercase" style="margin: 20px 0 10px 0;">
@@ -11,6 +11,8 @@
             </a>
         </div>
     </div>
+
+
     <table class="table-bordered table">
         <thead>
         <tr>
@@ -29,12 +31,19 @@
                 <td>{{ new.title|markdown }}</td>
                 <td class="status">En ligne</td>
                 <td class="text-center">
-                    <a href="{{ path('news_edit', {"id":new.id}) }}" title="Editer"><i class="far fa-edit"></i></a>
-                    <a href="{{ path('delete_news', {"id":new.id}) }}" title="Supprimer"><i class="far fa-trash-alt"></i></a>
-                    <a href="{{ path('admin_news_view', {"id":new.id}) }}" title="Visualiser"><i class="fas fa-eye"></i></a>
+                    <a href="{{ path('news_edit', {"id":new.id}) }}" title="Editer" class="icon-news"><i class="far fa-edit"></i></a>
+                    <a href="{{ path('delete_news', {"id":new.id}) }}" title="Supprimer" class="icon-news"><i class="far fa-trash-alt"></i></a>
+                    <a href="{{ path('admin_news_view', {"id":new.id}) }}" title="Visualiser" class="icon-news"><i class="fas fa-eye"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(news) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
 {% endblock %}
