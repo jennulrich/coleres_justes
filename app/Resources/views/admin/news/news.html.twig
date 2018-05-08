@@ -12,7 +12,6 @@
         </div>
     </div>
 
-
     <table class="table-bordered table">
         <thead>
         <tr>
@@ -32,7 +31,7 @@
                 <td class="status">En ligne</td>
                 <td class="text-center">
                     <a href="{{ path('news_edit', {"id":new.id}) }}" title="Editer" class="icon-news"><i class="far fa-edit"></i></a>
-                    <a href="" title="Supprimer" class="icon-news" data-toggle="modal" data-target="#{{ new.id }}">
+                    <a href="" title="Supprimer" class="icon-news" data-toggle="modal" data-target="#{{ new.id }}" style="outline: none">
                         <i class="far fa-trash-alt"></i>
                     </a>
                     <a href="{{ path('admin_news_view', {"id":new.id}) }}" title="Visualiser" class="icon-news"><i class="fas fa-eye"></i></a>
