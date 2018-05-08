@@ -2,6 +2,15 @@
 
 {% block content %}
     <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header ">
+                    <h4 class="card-title text-uppercase">données google analytics</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-6">
             <div class="card ">
                 <div class="card-header ">
@@ -9,13 +18,20 @@
                     <p class="card-category">Dernières news postées</p>
                 </div>
                 <div class="card-body ">
-                    <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+                    <div id="chartPreferences" class="ct-chart ct-perfect-fourth">
+                        {% for new in news %}
+                            <a href="{{ path('admin_news_view', {"id":new.id}) }}" data-toggle="modal" data-target="#{{ new.id }}" style="outline: none">
+                                <div style="width: 90%; display: inline-block">{{ new.title|markdown }}</div>
+                                <span><i class="fa fa-circle text-danger"></i></span>
+                            </a>
+
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="card-footer ">
                     <div class="legend">
-                        <span><i class="fa fa-circle text-info"></i> Open</span>
-                        <span><i class="fa fa-circle text-danger"></i> Bounce</span>
-                        <span><i class="fa fa-circle text-warning"></i> Unsubscribe</span>
+                        <span><i class="fa fa-circle text-info"></i> En ligne</span>
+                        <span><i class="fa fa-circle text-danger"></i> Hors-ligne</span>
                     </div>
                     <hr>
                     <div class="stats">
@@ -47,4 +63,28 @@
             </div>
         </div>
     </div>
+
+
+
+    {% for new in news %}
+        <div class="modal fade" id="{{ new.id }}" tabindex="-1" role="dialog" aria-labelledby="viewModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><h2>{{ new.title }}</h2></li>
+                            <li class="list-group-item">{{ new.content|markdown }}</li>
+                            <li class="list-group-item">{{ new.publishedAt|date("d/m/Y") }}</li>
+                            <li class="list-group-item">{{ new.insertedAt|date("d/m/Y") }}</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-fill btn-danger btn-sm text-uppercase" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
 {% endblock %}
