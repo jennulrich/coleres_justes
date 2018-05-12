@@ -1,18 +1,22 @@
 {% extends "admin/layout-login.html.twig" %}
 
 {% block content %}
-    <div style="margin: auto">
+    <div style="margin-top: 50px">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
                 <div class="card text-center" style="padding: 30px;">
                     <h2 style="margin-bottom: 30px">Les Colères Justes</h2>
-                    <form action="">
-                        <input type="email" style="width: 80%; margin-bottom: 5px; padding: 5px" placeholder="test@test.fr">
-                        <input type="password" style="width: 80%; padding: 5px">
-                        <a href="{{ path('dashboard') }}" class="btn btn-info" style="margin-top: 15px">Se connecter</a>
+                    <form action="{{ path('login') }}" method="post">
+                        <input type="email" value="{{ last_username }}" name="_username" style="width: 80%; margin-bottom: 5px; padding: 5px" placeholder="test@test.fr">
+                        <input type="password" name="_password" style="width: 80%; padding: 5px">
+                        <button type="submit" class="btn btn-info" style="margin-top: 15px">Se connecter</button>
                     </form>
                 </div>
             </div>
+            {% if error %}
+                <p class="m-b-0 text-danger">{{ error.messageKey }}</p>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

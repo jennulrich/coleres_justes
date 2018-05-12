@@ -1,4 +1,4 @@
-<header>
+<header class="{% if app.request.attributes.get('_route') == 'homepage' %}animated-menu fadeIn{% endif %}">
     <nav class="nav navbar text-uppercase" id="nav">
         <a href="{{ path('homepage') }}" class="{% if app.request.attributes.get('_route') == 'homepage' %}active-menu{% endif %}">accueil</a>
         <a href="{{ path('concept_page') }}" class="{% if app.request.attributes.get('_route') == 'concept_page' %}active-menu{% endif %}">concept</a>

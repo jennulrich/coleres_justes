@@ -7,6 +7,10 @@ body {
     display: flex;
 }*/
 
+body.bg-login {
+    background-image: url("../img/bglogin.png");
+}
+
 div.content {
     font-family: 'Open Sans', sans-serif;
 }
