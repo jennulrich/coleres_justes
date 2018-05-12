@@ -12,7 +12,7 @@
             </p>
         </div>
         <div class="col-md-6" style="padding: 0 30px;">
-            <form action="">
+            <!--<form action="">
                 <div class="">
                     <input type="text" placeholder="Nom" style="width: 100%; margin-bottom: 15px; padding: 5px 5px 5px 10px">
                     <input type="text" placeholder="Prénom" style="width: 100%; margin-bottom: 15px; padding: 5px 5px 5px 10px">
@@ -22,7 +22,11 @@
                         <button type="submit">Envoyer</button>
                     </div>
                 </div>
-            </form>
+            </form>-->
+            {{form_start(form)}}
+            {{form_widget(form)}}
+            <button type="submit">Envoyer</button>
+            {{form_end(form)}}
         </div>
     </div>
 </div>

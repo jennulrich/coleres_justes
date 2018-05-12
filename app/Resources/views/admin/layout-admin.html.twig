@@ -47,15 +47,15 @@
                         <span><i class="nc-icon nc-paper-2"></i> News</span>
                     </a>
                 </li>
-                <li {% if app.request.attributes.get('_route') == 'vos_coleres' %}class="active"{% endif %}>
-                    <a class="nav-link" href="#">
+                <li {% if app.request.attributes.get('_route') == 'admin_coleres' %}class="active"{% endif %}>
+                    <a class="nav-link" href="{{ path('admin_coleres') }}">
                         <span><i class="nc-icon nc-camera-20"></i> Vos colères</span>
                     </a>
                 </li>
                 <li {% if app.request.attributes.get('_route') == 'admin_about'
                         or (app.request.attributes.get('_route') == 'admin_edit_about') %}class="active"{% endif %}>
                     <a class="nav-link" href="{{ path('admin_about') }}">
-                        <span><i class="nc-icon nc-circle-09"></i> à propos</span>
+                        <span><i class="nc-icon nc-circle-09"></i> biographie</span>
                     </a>
                 </li>
                 <li>
@@ -70,15 +70,15 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo">
+                <a class="navbar-brand" href="#">
                     {%- if app.request.attributes.get('_route') == 'dashboard' -%}Dashboard{%- endif -%}
-                    {%- if (app.request.attributes.get('_route') == 'admin_news')
-                        or (app.request.attributes.get('_route') == 'add_news')
-                        or (app.request.attributes.get('_route') == 'news_edit')
-                        or (app.request.attributes.get('_route') == 'admin_news_view') -%}News{%- endif -%}
-                    {%- if app.request.attributes.get('_route') == 'admin_about' -%}About{%- endif -%}
-                    {%- if app.request.attributes.get('_route') == 'admin_edit_about' -%}About{%- endif -%}
-
+                    {%- if app.request.attributes.get('_route') == 'admin_news_view' -%}Aperçu de "{{ new.title }}"{%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'admin_news' -%}Liste des news <span style="font-size: 11pt">({{ news|length }} News){%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'add_news' -%}Ajout d'une news{%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'news_edit' -%}Modification d'une news{%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'admin_about' -%}Biographie{%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'admin_edit_about' -%}Modification de la biographie{%- endif -%}
+                    {%- if app.request.attributes.get('_route') == 'admin_coleres' -%}Liste des colères{%- endif -%}
                 </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
@@ -99,11 +99,7 @@
                                 <span class="d-lg-none">Notification</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Notification 1</a>
-                                <a class="dropdown-item" href="#">Notification 2</a>
-                                <a class="dropdown-item" href="#">Notification 3</a>
-                                <a class="dropdown-item" href="#">Notification 4</a>
-                                <a class="dropdown-item" href="#">Another notification</a>
+
                             </ul>
                         </li>
                     </ul>
@@ -112,7 +108,7 @@
                             <span class="no-icon">Bonjour Cyril</span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#pablo">
+                            <a class="nav-link" href="{{ path('logout') }}">
                                 <i class="nc-icon nc-button-power" style="padding-right: 5px"></i>
                                 <span class="no-icon">Déconnexion</span>
                             </a>

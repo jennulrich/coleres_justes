@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -31,7 +32,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=50)
+     * @ORM\Column(name="password", type="string", length=60)
      */
     private $password;
 
@@ -256,6 +257,16 @@ class User
     public function getRegisteredAt()
     {
         return $this->registeredAt;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
     }
 }
 

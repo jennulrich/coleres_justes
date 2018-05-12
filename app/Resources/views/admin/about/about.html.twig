@@ -1,11 +1,6 @@
 {% extends "admin/layout-admin.html.twig" %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="text-uppercase">à propos</h3>
-        </div>
-    </div>
 <div class="row">
     <div class="col-md-12">
         {% for about in abouts %}
@@ -15,7 +10,9 @@
                     <img src="{{ path("about_image", {"id":about.id}) }}" alt="" style="width: 100%;">
                 </div>
                 <div class="col-md-8">
-                    {{ about.content|markdown }}
+                    <div style="font-size: 10pt">
+                        {{ about.content|markdown }}
+                    </div>
                 </div>
             </div>
         </div>
