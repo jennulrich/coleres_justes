@@ -1,10 +1,6 @@
 {% extends "front/layout.html.twig" %}
 
 {% block content %}
-    <script>
-        $('.carousel').carousel();
-    </script>
-
     <div class="text-center">
         <div id="carouselExampleIndicators" class="carousel slide align" data-ride="carousel" data-interval="false">
             <ol class="carousel-indicators">
@@ -15,25 +11,27 @@
             </ol>
             <div class="carousel-inner title" role="listbox" id="concept">
                 <div class="carousel-item active">
-                    <div class="text-center animated fadeIn title-concept">
-                        <h2 class="text-uppercase" style="padding-bottom: 25px">le concept</h2>
-                        <p class=" explication">
-                            Il est parfois des colères que l'on respecte.
-                            <br>
-                            L'idée directrice est de montrer à travers cette série de photos, des femmes et des hommes
-                            engagés, souvent dans des causes au service des autres et qui, par leur refus d'abdiquer se sont
-                            un jour mis en colère.
-                            <br>
-                            En colère pour une cause juste : c'est cette idée de « colères justes » que j'ai voulu mettre en scène
-                            et en image
-                        </p>
+                    <div class="text-center animated fadeIn title-concept title-concept-first-slide">
+                        <div class="content-concept" style="margin: 80px 0 0 0;">
+                            <h2 class="text-uppercase">le concept</h2>
+                            <p class="explication">
+                                Il est parfois des colères que l'on respecte.
+                                <br>
+                                L'idée directrice est de montrer à travers cette série de photos, des femmes et des hommes
+                                engagés, souvent dans des causes au service des autres et qui, par leur refus d'abdiquer se sont
+                                un jour mis en colère.
+                                <br>
+                                S'indigner pour des causes justes : c'est le thème des « colères justes » et c'est ce que j'ai voulu mettre en
+                                scène et en image.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item title" id="definition">
                     <div class="text-center animated fadeIn title-concept">
-                        <h2 class="text-uppercase" style="padding-bottom: 25px">la colère</h2>
+                        <h2 class="text-uppercase">la colère</h2>
                         <h4 class="text-uppercase">salutaire et honorable</h4>
-                        <p class=" explication text-justify">
+                        <p class="explication text-justify">
                             En général, c'est notre idéal de justice qui réveille notre colère. Elle surgit suite aux querelles
                             d'insatisfaction, la protection de territoires, la défense de concepts philosophiques, politiques ou
                             religieux, le manque de respect envers une race ou une culture mais aussi dans la peur : la peur du
@@ -57,17 +55,17 @@
                 </div>
                 <div class="carousel-item title" id="definition2">
                     <div class="text-center animated fadeIn title-concept">
-                        <h2 class="text-uppercase" style="padding-bottom: 25px">la colère</h2>
+                        <h2 class="text-uppercase">la colère</h2>
                         <h4 class="text-uppercase">impulsive et violente</h4>
                         <p class="explication text-justify">
                             Tout le monde lutte avec la colère, car elle est en chacun de nous. Pourtant la psychologie met en
                             évidence les effets nocifs de la censure de la colère, qui enferme l'individu dans des zones de non-dits
                             et parasite la relation à soi-même et aux autres. Si nos cultures l'ont mises au banc de la société ; chez
                             les catholiques, la colère est un des sept péchés capitaux et chez les bouddhistes, elle fait partie
-                            des trois poisons de l'esprit... Est-ce une raison pour en avoir peur ? La colère déclenche plusieurs
+                            des trois poisons de l'esprit... <br>Est-ce une raison pour en avoir peur ? La colère déclenche plusieurs
                             modifications physiologiques préparant le corps au mouvement et à la réaction. Elles se traduisent
                             par une accélération du rythme cardiaque et un afflux de sang dans certaines parties du corps, ce qui
-                            colore la peau en rouge. La colère provoque également une contraction du corps dans son ensemble.
+                            colore la peau en rouge. <br>La colère provoque également une contraction du corps dans son ensemble.
                             Les mains tendent à se fermer en poing, les sourcils se froncent, les mâchoires se serrent et les narines
                             se dilatent, donnant une expression dure au visage. Le sujet ressent alors un échauffement de la
                             peau et le besoin d'agir.
@@ -78,8 +76,8 @@
                 </div>
                 <div class="carousel-item title" id="traitement">
                     <div class="text-center animated fadeIn title-concept">
-                        <h2 class="text-uppercase" style="padding-bottom: 25px">le traitement</h2>
-                        <p class=" explication text-justify">
+                        <h2 class="text-uppercase">le traitement</h2>
+                        <p class="explication text-justify">
                             Avec ce projet artistique, je prends le parti de mettre en scène dans des tableaux photographiques des colères
                             mémorables en représentant leurs auteurs sous les traits d'un colosse aux muscles surdéveloppés. De
                             cette manière, je rends la scène plus dramatique, plus impressionnante, je lui donne donc plus de force.
@@ -108,4 +106,10 @@
             </a>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('.carousel').carousel();
+    </script>
 {% endblock %}

@@ -1,54 +1,32 @@
 {% extends "front/layout.html.twig" %}
 
 {% block content %}
-<div id="gallery">
-    <div class="gallery-container animated fadeIn" id="gallery-container">
-        <div class="tz-gallery">
-            <div class="row gallery-first-row">
-                <div class="col-md-4 img-container">
-                    <div>
-                        <a class="lightbox" href="{{ asset('template/img/AMARA.jpg') }}">
-                            <img src="{{ asset('template/img/amara_min.png') }}" alt="Park" class="card-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 img-container">
-                    <div>
-                        <a class="lightbox" href="{{ asset('template/img/BAKER.jpg') }}">
-                            <img src="{{ asset('template/img/baker.png') }}" alt="Park" class="card-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 img-container">
-                    <div>
-                        <a class="lightbox" href="{{ asset('template/img/BALAVOINE.jpg') }}">
-                            <img src="{{ asset('template/img/balavoine.png') }}" alt="Park" class="card-img">
-                        </a>
-                    </div>
-                </div>
+<div style="width: 100%;" class="align animated fadeIn">
+    <div class="title">
+        <div class="row text-center" style="height: 240px">
+            <div class="col-md-12">
+                <a href="{{ asset('template/img/amara_big.png') }}" style="text-decoration: none" class="zoombox zgallery1">
+                    <img src="{{ asset('template/img/amara_min.png') }}" alt="" width="278px" height="185px" style="margin-right: 10px; margin-bottom: 15px">
+                </a>
+                <a href="{{ asset('template/img/pierre_big.png') }}" style="text-decoration: none" class="zoombox zgallery1">
+                    <img src="{{ asset('template/img/pierre.png') }}" alt="" width="185px" height="278px">
+                </a>
+                <a href="{{ asset('template/img/baker_big.png') }}" style="text-decoration: none" class="zoombox zgallery1">
+                    <img src="{{ asset('template/img/baker.png') }}" alt="" width="278px" height="185px" style="margin-left: 10px; margin-bottom: 15px">
+                </a>
             </div>
-            <div class="row">
-                <div class="col-md-4 img-container">
-                    <div>
-                        <a class="lightbox" href="{{ asset('template/img/BOVE.jpg') }}">
-                            <img src="{{ asset('template/img/bove.png') }}" alt="Park" class="card-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 img-container">
-                    <div>
-                        <a class="lightbox" href="{{ asset('template/img/KOUCHNER.jpg') }}">
-                            <img src="{{ asset('template/img/kouchner.png') }}" alt="Park" class="card-img">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 img-container">
-                    <div>
-                        <a class="lightbox" href="{{ asset('template/img/PIERRE.jpg') }}">
-                            <img src="{{ asset('template/img/pierre.png') }}" alt="Park" class="card-img">
-                        </a>
-                    </div>
-                </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <a href="{{ asset('template/img/bove_big.png') }}" style="text-decoration: none" class="zoombox zgallery1">
+                    <img src="{{ asset('template/img/bove.png') }}" alt="" width="185px" height="278px" style="margin-right: 10px;">
+                </a>
+                <a href="{{ asset('template/img/balavoine_big.png') }}" style="text-decoration: none" class="zoombox zgallery1">
+                    <img src="{{ asset('template/img/balavoine.png') }}" alt="" width="278px" height="185px" style="margin-top: 15px">
+                </a>
+                <a href="{{ asset('template/img/kouchner_big.png') }}" style="text-decoration: none" class="zoombox zgallery1">
+                    <img src="{{ asset('template/img/kouchner.png') }}" alt="" width="185px" height="278px" style="margin-left: 10px;">
+                </a>
             </div>
         </div>
     </div>
@@ -56,7 +34,13 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script>
-        baguetteBox.run('.tz-gallery');
+    <script type="text/javascript">
+        jQuery(function($){
+            $('a.zoombox').zoombox({
+                opacity     : 0.6,              // Black overlay opacity
+                theme       : 'zoombox',
+                gallery: false
+            });
+        });
     </script>
 {% endblock %}

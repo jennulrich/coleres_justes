@@ -1,11 +1,21 @@
 {% extends "front/layout.html.twig" %}
 
 {% block content %}
-    <div class="title">
-        <div>
-            {% for new in news %}
-                <a href="{{ path('news_view', {"id":new.id}) }}">{{ new.title }}</a>
-            {% endfor %}
+    <div class="align">
+        <div class="title" id="scroll">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; height: 80vh; overflow: scroll; overflow-x: hidden" class="animated fadeIn">
+
+                {#<a href="{{ path('news_view', {"id":new.id}) }}">{{ new.title }}</a>#}
+
+                {% for new in news %}
+                    <div style="overflow: hidden; padding: 15px 10px;">
+                        <img style="" src="{{ path("news_image", {"id":new.id}) }}" alt="" class="img-news" width="190px" height="190px">
+                    </div>
+                {% endfor %}
+
+            </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
 {% endblock %}

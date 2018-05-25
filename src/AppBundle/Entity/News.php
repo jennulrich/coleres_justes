@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * News
@@ -34,6 +35,13 @@ class News
      * @ORM\Column(name="content", type="string", length=1000)
      */
     private $content;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     *
+     * @Assert\File(mimeTypes={ "image/jpeg", "image/png"})
+     */
+    private $image;
 
     /**
      * @var \DateTime
@@ -155,5 +163,28 @@ class News
     {
         return $this->insertedAt;
     }
-}
 
+    /**
+     * Set image.
+     *
+     * @param string|null $image
+     *
+     * @return News
+     */
+    public function setImage($image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image.
+     *
+     * @return string|null
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+}

@@ -1,3 +1,4 @@
+/******************************** GENERAL ********************************/
 @font-face {
     font-family: "Gill Sans MT Condensed Regular";
     src: url("../fonts/Gill-Sans-MT-Condensed.ttf");
@@ -12,6 +13,18 @@ body {
     background-color: #141414;
 }
 
+main {
+    display: flex;
+}
+
+main, .align {
+    height: 85vh;
+}
+
+.active-menu {
+    border-bottom: 2px solid white;
+}
+
 .align {
     display: flex;
 }
@@ -22,8 +35,18 @@ body {
 }
 
 .title h1 {
-    font-size: 50pt;
+    font-size: 30pt;
     font-family: "Gill Sans MT Condensed Regular", sans-serif;
+}
+
+.explication {
+    font-size: 10pt;
+    line-height: 1.7;
+}
+
+/******************************** HEADER ********************************/
+header {
+    height: 10vh;
 }
 
 header nav.navbar {
@@ -51,36 +74,39 @@ nav a:hover {
     border-bottom: 2px solid white;
 }
 
-header {
-    height: 10vh;
+/******************************** CONCEPT ********************************/
+.title-home {
+    font-family: 'Gill Sans MT Condensed Regular', sans-serif;
+    font-size: 18pt;
 }
 
+.pad-t-40 {
+    padding-top: 40px;
+}
+
+/******************************** CONCEPT ********************************/
 div.title-concept {
     width: 70%;
     margin: 0 auto;
+    height: 400px;
 }
 
-footer {
-    height: 5vh;
-}
-
-a.title-to-concept {
-    color: white;
-}
+a.title-to-concept { color: white; }
 
 a.title-to-concept:hover {
     text-decoration: none;
     color: white;
 }
 
-main, .align {
-    height: 85vh;
+.title-concept h2 {
+    padding-bottom: 25px;
 }
 
-.explication {
-    font-size: 10pt;
+.title-concept-first-slide {
+    display: flex;
 }
 
+/******************************** GALLERY ********************************/
 .img-container {
     overflow: hidden;
     height: 170px;
@@ -89,10 +115,6 @@ main, .align {
 div div a.lightbox img.card-img {
     border-radius: 0;
     width: 100%;
-}
-
-main {
-    display: flex;
 }
 
 #gallery {
@@ -107,25 +129,106 @@ button#previous-button, button#next-button, button#close-button {
     outline: none;
 }
 
-input, textarea {
-    background-color: #141414;
-    border: 1px solid white;
-    border-radius: 3px;
-}
-
-input::placeholder, textarea {
-    color: white;
-    font-size: 10pt;
-}
-
 button {
     font-size: 10pt;
 }
 
-.active-menu {
-    border-bottom: 2px solid white;
+
+.amara {
+
 }
 
+
+/******************************** ABOUT ********************************/
 img.user {
     width: 70%;
+}
+
+.title-about {
+    font-size: 10pt;
+}
+
+.title-about h2 {
+    padding-bottom: 25px;
+}
+
+/******************************** CONTACT ********************************/
+.title-contact { width: 100%; }
+
+.title-contact h2 { padding-bottom: 20px; }
+
+.text-contact p {
+    font-size: 10pt;
+    padding: 0 15px;
+}
+
+.text-contact p a {
+    text-decoration: underline;
+    color: white;
+}
+
+.form-container { padding: 0 30px; }
+
+#contact_name, #contact_email, #contact_subject, #contact_message {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 7px;
+    color: white;
+    background-color: #141414;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-size: 10pt;
+}
+
+#contact_name::placeholder, #contact_email::placeholder,
+#contact_subject::placeholder, #contact_message::placeholder {
+    color: white;
+}
+
+#contact_message { height: 150px; }
+
+.button-form-contact { text-align: center; }
+
+/******************************** FOOTER ********************************/
+footer {
+    height: 5vh;
+    color: grey;
+    font-size: 9pt;
+}
+
+footer span:first-child {
+    padding: 0 0 0 15px;
+    float: left;
+    line-height: 5vh;
+}
+
+footer span:nth-child(2) {
+    padding: 0 15px 0 0;
+    float: right;
+    line-height: 5vh;
+}
+
+
+
+
+#scroll div::-webkit-scrollbar {
+    background-color: #141414;
+    width: 5px;
+}
+
+#scroll div::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+@media only screen and (max-width : 375px) {
+    header {
+        display: none;
+    }
+    
+    footer {
+        display: none;
+    }
 }
