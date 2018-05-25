@@ -2,6 +2,7 @@
 
 namespace AppBundle\EventListener;
 
+use AppBundle\Entity\News;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
@@ -34,7 +35,22 @@ class UploadImageListener
     private function uploadFile($entity)
     {
         // upload only works for Product entities
-        if (!$entity instanceof About) {
+        /*if (!$entity instanceof About) {
+            return;
+        }
+
+        $file = $entity->getImage();
+
+        // only upload new files
+        if (!$file instanceof UploadedFile) {
+            return;
+        }
+
+        $fileName = $this->uploader->upload($file);
+        $entity->setImage($fileName);*/
+
+        // NEWS
+        if (!$entity instanceof News) {
             return;
         }
 

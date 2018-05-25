@@ -21,7 +21,6 @@ class AboutFixtures extends Fixture
         $aboutContent
             ->setImage(null)
             ->setContent('
-               
                             Cyril Delvart débute sa carrière dans le long métrage auprès de réalisateurs comme Mathieu Kassovitz ou
                             Bernie Bonvoisin.
                        
@@ -39,12 +38,8 @@ class AboutFixtures extends Fixture
                             Son expérience de la fiction, le pousse naturellement vers les projets scénarisés, porteurs de sens.
                             
                             C\'est pourquoi, même à travers ses réalisations publicitaires, il garde à l\'esprit que ce qui justifie
-                            unfilm, au-delà des considérations esthétiques, c\'est avant tout le propos.
-                        
-                            Aujourd\'hui, il présente sa première série photographique intitulée "Les colères justes" dans laquelle
-                            il met en scène des personnes engagées, qui par leur refus d\'abdiquer se sont mis un jour en colère.
-                        
-            ');
+                            un film, au-delà des considérations esthétiques, c\'est avant tout le propos.
+                        ');
 
         $manager->persist($aboutContent);
         $manager->flush();

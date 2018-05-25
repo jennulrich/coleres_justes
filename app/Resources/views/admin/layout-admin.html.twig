@@ -47,11 +47,11 @@
                         <span><i class="nc-icon nc-paper-2"></i> News</span>
                     </a>
                 </li>
-                <li {% if app.request.attributes.get('_route') == 'admin_coleres' %}class="active"{% endif %}>
+                {#<li {% if app.request.attributes.get('_route') == 'admin_coleres' %}class="active"{% endif %}>
                     <a class="nav-link" href="{{ path('admin_coleres') }}">
                         <span><i class="nc-icon nc-camera-20"></i> Vos colères</span>
                     </a>
-                </li>
+                </li>#}
                 <li {% if app.request.attributes.get('_route') == 'admin_about'
                         or (app.request.attributes.get('_route') == 'admin_edit_about') %}class="active"{% endif %}>
                     <a class="nav-link" href="{{ path('admin_about') }}">
@@ -78,7 +78,7 @@
                     {%- if app.request.attributes.get('_route') == 'news_edit' -%}Modification d'une news{%- endif -%}
                     {%- if app.request.attributes.get('_route') == 'admin_about' -%}Biographie{%- endif -%}
                     {%- if app.request.attributes.get('_route') == 'admin_edit_about' -%}Modification de la biographie{%- endif -%}
-                    {%- if app.request.attributes.get('_route') == 'admin_coleres' -%}Liste des colères{%- endif -%}
+                    {#{%- if app.request.attributes.get('_route') == 'admin_coleres' -%}Liste des colères{%- endif -%}#}
                 </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>

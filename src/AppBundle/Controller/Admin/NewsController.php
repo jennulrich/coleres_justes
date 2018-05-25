@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\NewsType;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class NewsController extends Controller
@@ -127,5 +128,17 @@ class NewsController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('admin_news');
+    }
+
+    /**
+     * @Route("/admin/news/{id}/image", name="news_image", requirements={"id"="\d+"})
+     */
+    public function ImageViewAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $news = $em->getRepository(News::class)
+            ->find($id);
+        $file = $this->getParameter("images_directory")."/".$news->getImage();
+        return new BinaryFileResponse($file);
     }
 }

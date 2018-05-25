@@ -9,15 +9,15 @@
  */
 
 .animated {
-    -webkit-animation-duration: 7s;
-    animation-duration: 7s;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
 
 .animated-menu {
-    -webkit-animation-duration: 25s;
-    animation-duration: 25s;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }

@@ -5,6 +5,9 @@
         <div class="card">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><h2>{{ new.title }}</h2></li>
+                <li class="list-group-item">
+                    <img src="{{ path("news_image", {"id":new.id}) }}" alt="" class="img-fluid">
+                </li>
                 <li class="list-group-item">{{ new.content|markdown }}</li>
                 <li class="list-group-item">{{ new.publishedAt|date("d/m/Y") }}</li>
                 <li class="list-group-item">{{ new.insertedAt|date("d/m/Y") }}</li>

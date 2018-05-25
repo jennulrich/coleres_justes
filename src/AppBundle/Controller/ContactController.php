@@ -31,9 +31,10 @@ class ContactController extends Controller
             $em->persist($contact);
             $em->flush();
 
+            $emailContact = $this->getParameter('app_company_email');
             $message = (new \Swift_Message('Demande de contact'))
-                ->setFrom('test@test.fr')
-                ->setTo('jennifer.calipel@gmail.com')
+                ->setFrom($emailContact)
+                ->setTo($emailContact)
                 ->setBody(
                     $this->renderView('front/emails/contact.html.twig', [
                         'contact' => $contact
